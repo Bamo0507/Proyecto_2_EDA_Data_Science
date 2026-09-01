@@ -1,0 +1,21 @@
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Datos y archivos generados reproducibles
+**/data/processed/
+**/data/interim/
+**/data/tmp/
+
+# Python y Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Entorno local
+.DS_Store
+.vscode/
+.idea/
+*.log
+.env*
