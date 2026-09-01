@@ -90,6 +90,31 @@ y consistentes con los objetivos del MITSUI&CO. Commodity Prediction Challenge,
 y cuáles parecen aportar información similar o repetida a partir del análisis
 exploratorio?
 
+## Objetivos
+
+### Objetivo general
+
+Analizar la estructura, calidad y relaciones presentes en las variables del
+dataset del MITSUI&CO. Commodity Prediction Challenge mediante técnicas de
+análisis exploratorio, con el fin de establecer candidatos para una futura
+selección de características.
+
+### Objetivos específicos
+
+- Evaluar la estructura y calidad del dataset mediante el análisis de sus tipos
+  de datos, valores faltantes, duplicados y valores atípicos.
+
+- Analizar el comportamiento estadístico y las distribuciones de las variables
+  cuantitativas mediante medidas descriptivas y representaciones gráficas.
+
+- Comparar las asociaciones entre variables predictoras, familias de variables
+  y variables objetivo para reconocer relaciones relevantes dentro y entre los
+  mercados representados.
+
+- Clasificar las variables y familias de variables como candidatas con mayor
+  potencial informativo, información similar o repetida, o poca señal aparente,
+  con base en los resultados del análisis exploratorio.
+
 ## Referencias
 
 Banco Mundial. (2022). *Commodity markets: Evolution, challenges, and
