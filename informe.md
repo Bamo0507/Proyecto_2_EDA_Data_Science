@@ -1,4 +1,4 @@
-# Reto de predicción del comportamiento del petróleo
+# Reto de predicción de retornos en mercados de materias primas
 
 ## Contexto del problema
 
@@ -16,23 +16,71 @@ comportamiento de precios. Por esta razón, comprender sus movimientos es
 relevante para empresas, inversionistas y gobiernos que dependen de estos
 recursos para tomar decisiones.
 
-Para este proyecto, el interés se concentra en el petróleo como variable
-objetivo, una materia prima cuya importancia se relaciona con su uso en el
-transporte, la industria y la producción de energía. Anticipar su comportamiento
-representa un reto debido a que su precio no depende de un solo elemento, sino
-de la interacción entre la producción de países pertenecientes y no
-pertenecientes a la OPEP, la demanda internacional, los inventarios disponibles
-y la actividad de los mercados financieros (U.S. Energy Information
-Administration, s. f.). Además, acontecimientos geopolíticos o interrupciones
-inesperadas en la oferta pueden modificar rápidamente las condiciones del
-mercado. Ante esta complejidad, el análisis de datos históricos permite explorar
-qué variables presentan relaciones con los movimientos del petróleo y cuáles
-podrían aportar información para una futura etapa de predicción.
+El reto seleccionado busca anticipar retornos futuros a partir de datos
+históricos provenientes de la London Metal Exchange, Japan Exchange Group, el
+mercado de acciones de Estados Unidos y el mercado de divisas. Según Demkin et
+al. (2025), combinar información de estos mercados puede contribuir a construir
+pronósticos más estables y apoyar la gestión del riesgo en los mercados globales
+de materias primas. Sin embargo, el problema no se limita a predecir el precio
+de un solo producto, debido a que el dataset contiene múltiples variables
+objetivo derivadas de los retornos futuros de distintos activos o de las
+diferencias entre pares de activos. Esta diversidad aumenta la complejidad del
+análisis, ya que las relaciones pueden variar según el instrumento, el mercado y
+el horizonte temporal utilizado. Ante este escenario, el análisis exploratorio
+permitirá comprender cómo se organizan los datos, qué patrones comparten las
+variables y cuáles podrían aportar información para una futura etapa de
+selección de características y modelado.
+
+Debido a la cantidad de variables, mercados y objetivos presentes, este
+problema puede abordarse mediante Ciencia de Datos, comenzando por un análisis
+exploratorio que permita estudiar la información antes de establecer supuestos
+o construir modelos. Heckert y Filliben (2003) explican que este tipo de
+análisis busca obtener una mayor comprensión del conjunto de datos, descubrir
+su estructura interna, identificar variables importantes y detectar valores
+atípicos o anomalías. En este proyecto, dicho enfoque permitirá evaluar la
+calidad de los datos y reconocer asociaciones entre instrumentos, mercados y
+variables objetivo. De esta forma, los hallazgos obtenidos podrán servir como
+fundamento para decidir qué relaciones y características convendría investigar
+en una futura etapa predictiva.
+
+## Situación problemática
+
+La predicción de retornos en mercados de materias primas representa una
+dificultad debido a que los instrumentos financieros no se comportan de forma
+aislada, sino que pueden responder a cambios en la oferta y demanda,
+acontecimientos económicos y movimientos de otros mercados. En el reto de
+MITSUI&CO., esta complejidad aumenta por la combinación de información histórica
+proveniente de la London Metal Exchange, Japan Exchange Group, el mercado de
+acciones de Estados Unidos y el mercado de divisas, junto con 424 variables
+objetivo construidas a partir de distintos activos, pares de activos y
+horizontes temporales (Demkin et al., 2025). Aunque esta diversidad permite
+estudiar el comportamiento conjunto de diferentes instrumentos, también
+dificulta reconocer cuáles relaciones son relevantes y si estas se presentan de
+manera consistente.
+
+Por otro lado, contar con una gran cantidad de datos no garantiza que todas las
+variables aporten información útil para una futura etapa predictiva. La
+presencia de variables poco relacionadas con los objetivos, información
+redundante o patrones inestables puede introducir ruido y aumentar
+innecesariamente la complejidad del problema. Por esta razón, el análisis
+exploratorio se centrará especialmente en examinar las asociaciones entre
+predictores y variables objetivo, buscando reconocer cuáles presentan un mayor
+potencial informativo y cuáles aparentemente aportan poca señal. Estos
+resultados permitirán reducir el espacio de variables que deberá investigarse
+posteriormente y establecer una base fundamentada para una futura selección de
+características, sin afirmar todavía que su capacidad predictiva ha sido
+comprobada mediante modelos.
 
 ## Referencias
 
 Banco Mundial. (2022). *Commodity markets: Evolution, challenges, and
 policies*. https://www.worldbank.org/en/research/publication/commodity-markets
 
-U.S. Energy Information Administration. (s. f.). *What drives crude oil
-prices: Overview*. https://www.eia.gov/finance/markets/crudeoil/index.php
+Demkin, M., Takano, N., Rai, R., Dane, S., & Kitayama, T. (2025).
+*MITSUI&CO. Commodity Prediction Challenge*. Kaggle.
+https://www.kaggle.com/competitions/mitsui-commodity-prediction-challenge
+
+Heckert, N. A., & Filliben, J. J. (2003). *NIST/SEMATECH e-Handbook of
+Statistical Methods: Chapter 1, Exploratory Data Analysis*. National Institute
+of Standards and Technology.
+https://www.nist.gov/publications/nistsematech-e-handbook-statistical-methods-chapter-1-exploratory-data-analysis
