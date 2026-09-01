@@ -71,6 +71,25 @@ posteriormente y establecer una base fundamentada para una futura selección de
 características, sin afirmar todavía que su capacidad predictiva ha sido
 comprobada mediante modelos.
 
+## Problema científico
+
+El dataset del MITSUI&CO. Commodity Prediction Challenge integra una gran
+cantidad de variables procedentes de distintos mercados y 424 variables
+objetivo (Demkin et al., 2025). Sin embargo, antes de desarrollar modelos
+predictivos, se desconoce cuáles variables o familias de variables presentan
+asociaciones más fuertes y consistentes con los objetivos, cuáles parecen
+aportar información similar o repetida y cuáles muestran poca señal aparente.
+Esta falta de conocimiento dificulta establecer, con base en evidencia, qué
+variables deberían considerarse candidatas para una futura etapa de selección
+de características.
+
+## Pregunta de investigación
+
+¿Qué variables y familias de variables presentan las asociaciones más fuertes
+y consistentes con los objetivos del MITSUI&CO. Commodity Prediction Challenge,
+y cuáles parecen aportar información similar o repetida a partir del análisis
+exploratorio?
+
 ## Referencias
 
 Banco Mundial. (2022). *Commodity markets: Evolution, challenges, and
