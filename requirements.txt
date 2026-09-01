@@ -1,1 +1,2 @@
-# Dependencias por definir despues de inspeccionar los datos.
+pandas
+jupyter
