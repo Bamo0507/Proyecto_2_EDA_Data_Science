@@ -124,7 +124,14 @@ Demkin, M., Takano, N., Rai, R., Dane, S., & Kitayama, T. (2025).
 *MITSUI&CO. Commodity Prediction Challenge*. Kaggle.
 https://www.kaggle.com/competitions/mitsui-commodity-prediction-challenge
 
+Databento. (2024, 4 de marzo). *Working with high-frequency market data: Data
+integrity and cleaning*. https://databento.com/blog/data-cleaning
+
 Heckert, N. A., & Filliben, J. J. (2003). *NIST/SEMATECH e-Handbook of
 Statistical Methods: Chapter 1, Exploratory Data Analysis*. National Institute
 of Standards and Technology.
 https://www.nist.gov/publications/nistsematech-e-handbook-statistical-methods-chapter-1-exploratory-data-analysis
+
+Verousis, T., & ap Gwilym, O. (2010). An improved algorithm for cleaning ultra
+high-frequency data. *Journal of Derivatives & Hedge Funds, 15*(4), 323–340.
+https://doi.org/10.1057/jdhf.2009.16
