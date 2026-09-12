@@ -435,23 +435,42 @@ durante el EDA, ya que variables correlacionadas pueden aportar información
 complementaria mediante interacciones o responder de manera distinta durante
 otros períodos.
 
-### **Resumen de lo encontrado**
+## **Hallazgos y conclusiones**
 
-En conjunto, el análisis mostró que las ausencias son principalmente
-estructurales y que conservar la secuencia temporal resulta más apropiado que
-eliminar todas las filas incompletas. Las distribuciones y los candidatos
-atípicos difieren entre mercados, pero varios extremos forman períodos
-continuos que pueden corresponder a movimientos reales. Por otro lado, las
-asociaciones individuales con los targets son débiles, mientras que la
-redundancia dentro de algunas familias es considerable.
+### **Hallazgos principales**
 
-Dicho esto, las correlaciones de Spearman únicamente describen relaciones
-monotónicas individuales, por lo que pueden omitir interacciones y patrones no
-lineales. Además, el ranking surge de más de 234,000 comparaciones y todavía no
-se ha validado mediante divisiones temporales o modelos. Por ello, LME_PB_Close,
-los ETFs de bonos y las familias redundantes se conservarán como candidatos a
-probar, y las decisiones finales de inclusión o exclusión deberán tomarse en
-una etapa predictiva.
+El análisis mostró que los valores faltantes siguen principalmente patrones de
+cobertura propios de cada mercado, por lo que eliminar todas las filas
+incompletas habría descartado una parte considerable de la información. Los
+valores atípicos también suelen aparecer en períodos consecutivos y pueden
+representar movimientos reales del mercado, no solamente errores aislados.
+
+Por otro lado, las correlaciones individuales entre predictores y targets son
+generalmente débiles. LME_PB_Close y algunos ETFs de bonos presentaron las
+asociaciones más altas, pero todavía deben considerarse candidatos y no
+variables con capacidad predictiva comprobada. También se encontró una alta
+redundancia entre las mediciones de precio de un mismo instrumento y dentro de
+familias como los ETFs de bonos y los instrumentos relacionados con el oro.
+
+### **Conclusiones y siguientes pasos**
+
+En conjunto, el análisis exploratorio permitió comprender la estructura del
+dataset y reconocer que los mercados presentan diferencias en su cobertura,
+variabilidad y presencia de valores atípicos. Asimismo, se identificaron
+asociaciones débiles entre la mayoría de los predictores y targets, junto con
+algunas variables candidatas y familias que aportan información similar. Estos
+resultados permiten cerrar el análisis con una visión más clara de la
+información disponible, sin eliminar datos que todavía podrían resultar útiles
+en una etapa predictiva.
+
+Al generar los modelos, se recomienda comparar distintas variantes del
+dataset que tomen en consideración lo encontrado durante el EDA. Por ejemplo,
+se puede evaluar una versión que conserve los datos sin tratamientos
+adicionales, otra que gestione los valores faltantes y atípicos, y una versión
+que reduzca o agrupe las familias de variables redundantes. Todas las variantes
+deberán evaluarse bajo las mismas condiciones y respetando el orden temporal,
+para poder determinar si estos cambios mejoran el desempeño fuera de muestra y
+sustentar la selección final de variables con evidencia.
 
 ## Referencias
 
