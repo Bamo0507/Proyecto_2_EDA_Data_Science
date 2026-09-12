@@ -115,6 +115,58 @@ selección de características.
   potencial informativo, información similar o repetida, o poca señal aparente,
   con base en los resultados del análisis exploratorio.
 
+## **Descripción de los datos**
+
+Los datos provienen del MITSUI&CO. Commodity Prediction Challenge de Kaggle
+(Demkin et al., 2025) y se encuentran organizados en archivos complementarios,
+no en un único CSV. Esta organización separa los predictores, las variables
+objetivo y la metadata necesaria para interpretar los targets, de tal forma que
+se puede analizar cada elemento sin confundir su función dentro del reto.
+
+### **Estructura de los archivos**
+
+| Archivo | Contenido | Observaciones | Columnas |
+| --- | --- | --- | --- |
+| train.csv | Predictores históricos para entrenamiento. | 1,961 | 558 |
+| train_labels.csv | Valores históricos de las variables objetivo. | 1,961 | 425 |
+| target_pairs.csv | Nombre, rezago y expresión de cada target. | 424 | 3 |
+| test.csv | Predictores para la evaluación del reto. | 134 | 559 |
+
+Las filas de train.csv y train_labels.csv se identifican mediante date_id, por
+lo que cada una representa una misma fecha dentro de la serie histórica. Por
+otro lado, las 557 columnas predictoras originales reúnen información de
+acciones estadounidenses, la London Metal Exchange, Japan Exchange Group y
+tipos de cambio. Estas variables incluyen precios de apertura, máximo, mínimo y
+cierre, versiones ajustadas de precios y volumen, volúmenes, interés abierto,
+precios de liquidación y tipos de cambio. Asimismo, train_labels.csv contiene
+424 targets y target_pairs.csv documenta si cada uno representa el retorno de
+un instrumento o la diferencia entre dos instrumentos, junto con su rezago de
+uno a cuatro períodos.
+
+### **Operaciones de preparación**
+
+Primero, se conservaron los valores faltantes que ya venían del origen, ya que
+presentan patrones asociados con la cobertura temporal de los distintos
+mercados. En lugar de eliminar las filas con ausencias o imputar valores, se
+mantuvieron como NaN para que cada análisis posterior utilice únicamente las
+variables que necesita, sin romper la secuencia temporal completa.
+
+Luego, se excluyeron las cinco variables US_Stock_GOLD_*, debido a que su
+cobertura finaliza antes que la de los demás predictores y no están disponibles
+en el conjunto de prueba. Finalmente, se revisó la consistencia de las series
+OHLC de acciones estadounidenses. Se identificaron 97 valores de apertura y 10
+de cierre fuera del intervalo definido por el precio mínimo y máximo de su
+misma fecha; estas 107 celdas se marcaron como NaN, sin modificar los valores
+mínimos o máximos ni eliminar observaciones completas.
+
+Como resultado, el archivo final de entrenamiento, train_eda.csv, conserva las
+1,961 observaciones y 553 columnas: date_id y 552 predictores. El archivo final
+de prueba, test_eda.csv, conserva sus 134 observaciones y 554 columnas,
+incluyendo date_id, is_scored y los mismos 552 predictores disponibles en
+entrenamiento. Estas operaciones se implementaron mediante un pipeline
+reproducible, por lo que los datos crudos permanecen intactos y la versión
+utilizada para el análisis puede regenerarse.
+
 ## Referencias
 
 Banco Mundial. (2022). *Commodity markets: Evolution, challenges, and
